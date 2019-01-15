@@ -1,0 +1,9 @@
+CREATE TABLE IF NOT EXISTS post (
+  post_id INT(11) ZEROFILL NOT NULL AUTO_INCREMENT,
+  post_titulo VARCHAR(90) NULL,
+  post_descricao VARCHAR(255) NULL,
+  post_curtida INT(11) NOT NULL DEFAULT 0,
+  post_data DATETIME NOT NULL DEFAULT NOW(),
+  PRIMARY KEY (post_id)
+) ENGINE = InnoDB
+DEFAULT CHARACTER SET = latin1;

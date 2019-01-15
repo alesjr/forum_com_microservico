@@ -1,0 +1,15 @@
+version: '2'
+services:
+  upvotes:
+    build:
+      context: "."
+      dockerfile: "Dockerfile"
+    environment:
+      JDBC_URL: jdbc:mysql://mysql:3306/upvotes?user=root&password=123
+    links:
+      - mysql:mysql
+  mysql:
+    image: mysql:5.7
+    environment:
+      MYSQL_DATABASE: upvotes
+      MYSQL_ROOT_PASSWORD: 123
